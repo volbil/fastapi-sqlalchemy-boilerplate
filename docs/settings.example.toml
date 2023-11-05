@@ -1,0 +1,25 @@
+[default]
+    [default.database]
+    endpoint = "postgresql+asyncpg://user:password@localhost:5432/boilerplate"
+
+    [testing.oauth.google]
+    client_id = "xxx.apps.googleusercontent.com"
+    client_secret = "secret"
+    redirect_uri = "http://example.com/oauth/google"
+    enabled = false
+
+    [default.backend]
+    origins = [
+        "http://localhost:8000",
+        "http://localhost:3000",
+    ]
+
+[testing]
+    [testing.database]
+    endpoint = "postgresql+asyncpg://user:password@localhost:5432/boilerplate-tests"
+
+    [testing.oauth.google]
+    client_id = "xxx.apps.googleusercontent.com"
+    client_secret = "secret"
+    redirect_uri = "http://example.com/oauth/google"
+    enabled = true

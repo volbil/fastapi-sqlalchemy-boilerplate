@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "fastapi-sqlalchemy-boilerplate"
+version = "0.1.0"
+description = "FastAPI SQLAlchemy Boilerplate"
+authors = ["volbil <volbilnexus@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["all"], version = "^0.104.1"}
+dynaconf = "^3.2.4"
+sqlalchemy = "^2.0.23"
+bcrypt = "^4.0.1"
+pytest = "^7.4.3"
+pytest-postgresql = "^5.0.0"
+async-asgi-testclient = "^1.4.11"
+asyncpg = "^0.29.0"
+pytest-asyncio = "^0.21.1"
+apscheduler = "^3.10.4"
+alembic = "^1.12.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+python_functions = "test_*"
+python_files = "test_*.py"
+asyncio_mode = "auto"
+testpaths = "tests"
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 80
+exclude = [".venv", "venv", "alembic"]
+extend-ignore = [
+    "F821",  # Disable checks for annotated SQLAlchemy relations 
+]

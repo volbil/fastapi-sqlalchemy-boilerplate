@@ -1,0 +1,13 @@
+[Unit]
+Description=Uvicorn instance to serve FastAPI Boilerplate
+After=network.target
+
+[Service]
+User=username
+Group=www-data
+WorkingDirectory=/home/username/boilerplate
+Environment="PATH=/home/username/boilerplate/venv/bin"
+ExecStart=/home/username/boilerplate/venv/bin/uvicorn run:app --port=7272
+
+[Install]
+WantedBy=multi-user.target
